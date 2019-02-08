@@ -1,7 +1,9 @@
-/* global console, exports */
+/* global console, exports, require */
 
 (function() {
   "use strict";
+
+  var sym = require("./sym");
 
   var eql = function(a, b) {
     if (a !== null && a.constructor === Array) {
@@ -61,22 +63,18 @@
 
           var expect = o.expect;
 
-          /*
-        if (arc.isSymbol(expect)) {
-          expect = arc.symName(expect);
-        }
-				*/
+          if (sym.is(expect)) {
+            expect = sym.name(expect);
+          }
 
           if (o.pass) {
             console.log("pass: " + expect);
           } else {
             var res = o.res;
 
-            /*
-          if (arc.isSymbol(res)) {
-            res = arc.symName(res);
-          }
-					*/
+            if (sym.is(res)) {
+              res = sym.name(res);
+            }
 
             console.log("FAIL: expected " + expect + " got " + res);
           }
