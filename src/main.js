@@ -7,7 +7,9 @@
 
   require("../test/chr");
   require("../test/pair");
+  require("../test/rdr");
   require("../test/sym");
+  require("../test/tokenize");
 
   test.run();
 })();
