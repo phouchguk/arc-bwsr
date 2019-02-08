@@ -1,17 +1,21 @@
-"use strict";
+/* global exports */
 
-var Char = function(value) {
-  if (typeof value !== "number") {
-    throw new Error("Char value must be a number, was " + value);
-  }
+(function() {
+  "use strict";
 
-  this.value = value;
-};
+  var Char = function(value) {
+    if (typeof value !== "number") {
+      throw new Error("Char value must be a number, was " + value);
+    }
 
-exports.get = function(value) {
-  return new Char(value);
-};
+    this.value = value;
+  };
 
-exports.val = function(c) {
-  return c.value;
-};
+  exports.get = function(value) {
+    return new Char(value);
+  };
+
+  exports.val = function(c) {
+    return c.value;
+  };
+})();

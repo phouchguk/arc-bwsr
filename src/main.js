@@ -1,8 +1,11 @@
-"use strict";
+/* global require */
 
-var chr = require("./chr");
-var test = require("./test");
+(function() {
+  "use strict";
 
-require("../test/chr");
+  var test = require("./test");
 
-test.run();
+  require("../test/chr");
+
+  test.run();
+})();

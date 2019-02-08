@@ -1,3 +1,7 @@
 node src/main.js
+
+jshint -c jshint.config src
+jshint -c jshint.config test
+
 browserify src/main.js -o dist/arc.js
 uglifyjs dist/arc.js -c -m > dist/arc.min.js
