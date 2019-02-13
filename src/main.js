@@ -10,6 +10,7 @@
   require("../test/rdr");
   require("../test/sym");
   require("../test/tokenize");
+  require("../test/uniq");
 
   test.run();
 })();
