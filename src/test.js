@@ -25,6 +25,10 @@
         res = "EXC: " + e;
       }
 
+      if (typeof tests[i].transform !== "undefined") {
+        res = tests[i].transform(res);
+      }
+
       var ok = eql(res, tests[i].expect);
 
       output.push({
@@ -96,11 +100,12 @@
     ns = tests[desc];
   };
 
-  exports.it = function(desc, fn, expect) {
+  exports.it = function(desc, fn, expect, transform) {
     ns.push({
       desc: desc,
       fn: fn,
-      expect: expect
+      expect: expect,
+      transform: transform
     });
   };
 

@@ -49,4 +49,46 @@
     },
     null
   );
+
+  var trdr = new IdxRdr(["abc", "def", "ghi"]);
+
+  test.it(
+    "should pop first token",
+    function() {
+      return trdr.pop();
+    },
+    "abc"
+  );
+
+  test.it(
+    "should pop second token",
+    function() {
+      return trdr.pop();
+    },
+    "def"
+  );
+
+  test.it(
+    "should peek third token",
+    function() {
+      return trdr.peek();
+    },
+    "ghi"
+  );
+
+  test.it(
+    "should pop third token",
+    function() {
+      return trdr.pop();
+    },
+    "ghi"
+  );
+
+  test.it(
+    "should return null",
+    function() {
+      return trdr.pop();
+    },
+    null
+  );
 })();

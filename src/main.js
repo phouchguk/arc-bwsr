@@ -11,6 +11,7 @@
   require("../test/sym");
   require("../test/tokenize");
   require("../test/uniq");
+  require("../test/parse");
 
   test.run();
 })();

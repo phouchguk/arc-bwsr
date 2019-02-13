@@ -112,7 +112,7 @@
       return cons(sym.get(quotes[token]), cons(parse(rdr, genSym), sym.nil));
     }
 
-    var nr = parseFloat(nr);
+    var nr = parseFloat(token);
 
     // symbol?
     if (isNaN(nr)) {
