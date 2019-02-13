@@ -20,6 +20,7 @@
     return typeof exp === "symbol";
   };
 
+  exports.fn = sym("fn");
   exports.nil = sym("nil");
   exports.t = sym("t");
 })();
